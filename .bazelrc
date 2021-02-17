@@ -1,0 +1,7 @@
+common --enable_platform_specific_config
+build --java_toolchain=@bazel_tools//tools/jdk:toolchain_hostjdk8
+build --host_java_toolchain=@bazel_tools//tools/jdk:toolchain_hostjdk8
+# workaround to run coursier using embedded JDK: https://github.com/bazelbuild/rules_jvm_external/issues/445
+build --repo_env=JAVA_HOME=../bazel_tools/jdk
+build:macos --javabase=@openjdk8u242_darwin_archive//:runtime
+build:macos --host_javabase=@openjdk8u242_darwin_archive//:runtime

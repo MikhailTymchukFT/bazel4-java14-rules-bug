@@ -1,0 +1,8 @@
+# Config
+.idea/
+.project/**/
+.ijwb/
+*.iml
+
+# Bazel
+bazel-*
